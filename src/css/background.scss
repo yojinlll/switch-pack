@@ -1,0 +1,112 @@
+$angle: 0;
+$rotate: 2;
+$bg-color1: #8a36ff;
+$bg-color2: rgba(132, 50, 238, 0.85);
+$bg-color3: #ff445f;
+$rgb1: 50;
+$rgb2: 255;
+$rgb3: 250;
+$duration: 6s;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $bg-color1 fixed;
+  background-image: linear-gradient($angle+deg, rgba($rgb1, $rgb2, $rgb3, 1) , transparent);
+  animation-name: bg-spin, bg-color;
+  animation-duration: $duration, ($duration * 2);
+  animation-direction: alternate, normal;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: bg-spin, bg-color;
+  -webkit-animation-duration: $duration, ($duration * 2);
+  -webkit-animation-direction: alternate, normal;
+  -webkit-animation-iteration-count: infinite;
+}
+h1 {
+  margin: 150px auto;
+  font-family: sans-serif;
+  font-size: 4vw;
+  color: black;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+@keyframes bg-color {
+  0% {background-color: $bg-color1;}
+  30% {background-color: $bg-color2;}
+  80% {background-color: $bg-color3;}
+}
+@-webkit-keyframes bg-color {
+  0% {background-color: $bg-color1;}
+  30% {background-color: $bg-color2;}
+  80% {background-color: $bg-color3;}
+}
+@keyframes bg-spin {
+  @for $percent from 0 through 100 {
+    #{$percent}% {background-image: linear-gradient(#{($angle)}deg, rgba($rgb1, $rgb2, $rgb3, 1), transparent);}
+    $angle: $angle + $rotate;
+    $rgb1: $rgb1 + 2.55;
+    $rgb2: $rgb2 - 1.275;
+    $rgb3: $rgb3 - 0.6375;
+  }
+}
+
+
+//body {
+//  width: 100vh;
+//  height: 90vh;
+//  //color: #fff;
+//  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+//  background-size: 400% 400%;
+//  -webkit-animation: Gradient 15s ease infinite;
+//  -moz-animation: Gradient 15s ease infinite;
+//  animation: Gradient 15s ease infinite;
+//}
+//
+//@-webkit-keyframes Gradient {
+//  0% {
+//    background-position: 0% 50%
+//  }
+//  50% {
+//    background-position: 100% 50%
+//  }
+//  100% {
+//    background-position: 0% 50%
+//  }
+//}
+//
+//@-moz-keyframes Gradient {
+//  0% {
+//    background-position: 0% 50%
+//  }
+//  50% {
+//    background-position: 100% 50%
+//  }
+//  100% {
+//    background-position: 0% 50%
+//  }
+//}
+//
+//@keyframes Gradient {
+//  0% {
+//    background-position: 0% 50%
+//  }
+//  50% {
+//    background-position: 100% 50%
+//  }
+//  100% {
+//    background-position: 0% 50%
+//  }
+//}
+
+//h1,
+//h6 {
+//  font-family: 'Open Sans';
+//  font-weight: 300;
+//  text-align: center;
+//  position: absolute;
+//  top: 45%;
+//  right: 0;
+//  left: 0;
+//}

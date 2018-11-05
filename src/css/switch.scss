@@ -1,0 +1,212 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+$boxHeight: 420px;
+$boxWidth: 900px;
+$controllerWidth: 150px;
+$radius: 80px;
+$light-black: #212121;
+$shadow: 2px 2px 4px black;
+$box-shadow: 5px 10px 20px $light-black;
+$red: #d10019;
+$white: #fafafa;
+
+
+
+.box-wrapper {
+  min-width: 900px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    width: $boxWidth;
+    height: $boxHeight;
+    display: flex;
+    justify-content: space-between;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+  }
+
+  .screen {
+    background: #000;
+    flex: 1;
+    display: flex; justify-content: center; align-items: center;
+
+    .screen-main {
+      $border: 30px;
+      border: 1px solid black;
+      width: $boxWidth - $controllerWidth*2 - $border;
+      height: $boxHeight - $border;
+      border-radius: 10px;
+      background: $red;
+    }
+  }
+
+  .controller-left, .controller-right {
+    width: $controllerWidth;
+    height: $boxHeight;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .position-wrapper{
+      width: 100px;
+      height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .joystick{
+        background: $light-black;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        box-shadow: 2px 2px 4px black;
+      }
+      .key-group{
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        transform: rotate(45deg);
+
+        .key{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: $light-black;
+          box-shadow: 2px 2px 4px black;;
+        }
+      }
+    }
+  }
+
+  .controller-left {
+    background: #00bbda;
+    border-radius: $radius 0 0 $radius;
+
+    .minus-sign{
+      background: $light-black;
+      border-radius: 10px;
+      width: 30px;
+      height: 10px;
+      margin-right: -90px;
+    }
+    .small-square{
+      background: $light-black;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      margin-right: -90px;
+      box-shadow: $shadow;
+    }
+  }
+
+  .controller-right {
+    background: #ff5f53;
+    border-radius: 0 $radius $radius 0;
+    position: relative;
+
+    .plus-sign{
+      .plus-sign-1{
+        background: $light-black;
+        border-radius: 10px;
+        width: 30px;
+        height: 10px;
+        margin-right: 90px;
+      }
+      .plus-sign-2{
+        background: $light-black;
+        border-radius: 10px;
+        width: 10px;
+        height: 30px;
+        position: absolute;
+        top: 8px;
+        left: 25px;
+      }
+    }
+    .small-circle{
+      background: $light-black;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 90px;
+      box-shadow: $shadow;
+    }
+  }
+}
+
+.box > .screen > .screen-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background: url("") no-repeat center;
+  //background-size: cover;
+
+  .screen-init{
+    $logoWidth: 100px;
+    $logoHeight: 250px;
+    $logoRadius: 40px;
+
+    width: $logoWidth * 2 + 22px;
+    height: $logoHeight;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-left,.logo-right{ width: $logoWidth; height: $logoHeight; }
+    .logo-left{
+      background: $white;
+      border-radius: $logoRadius 0 0 $logoRadius;
+      display: flex; justify-content: center; align-items: center;
+
+        .inside-left{
+          position: relative;
+          width: $logoWidth - 35px;
+          height: $logoHeight - 35px;
+          background: $red;
+          border-radius: $logoRadius - 8px 0 0 $logoRadius - 8px;
+
+          .circle-left{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: $white;
+            left: 8px;
+            bottom: 40px;
+            animation: logo-up 2s infinite alternate-reverse linear;
+          }
+          @keyframes logo-up{
+            0%{transform:translateY(-90px);}
+            100%{transform:translateY(0px);}
+          }
+        }
+    }
+    .logo-right{
+      position: relative;
+      border-radius: 0 $logoRadius $logoRadius 0;
+      background: $white;
+
+      .circle-right{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $red;
+        left: 25px;
+        top: 47px;
+        animation: logo-down 2s infinite alternate-reverse linear;
+      }
+      @keyframes logo-down{
+        0%{transform:translateY(90px);}
+        100%{transform:translateY(0px);}
+      }
+    }
+  }
+}
+
