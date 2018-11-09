@@ -32,6 +32,7 @@ $white: #fafafa;
     background: #000;
     flex: 1;
     display: flex; justify-content: center; align-items: center;
+    position: relative;
 
     .screen-main {
       $border: 30px;
@@ -157,6 +158,8 @@ $white: #fafafa;
     height: $logoHeight;
     display: flex;
     justify-content: space-between;
+    z-index: 1;
+    transition: all 1s;
 
     .logo-left,.logo-right{ width: $logoWidth; height: $logoHeight; }
     .logo-left{
@@ -207,6 +210,28 @@ $white: #fafafa;
         100%{transform:translateY(0px);}
       }
     }
+    &.active{
+      transition: all 1s;
+      opacity: 0;
+    }
   }
 }
 
+
+//switch-music
+.screen > .screen-main > .switch-music{
+  $border: 30px;
+  //border: 1px solid black;
+  width: $boxWidth - $controllerWidth*2 - $border;
+  height: $boxHeight - $border;
+  border-radius: 10px;
+  background: rgba(227, 20, 61, 0.87);
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+
+  &.active{
+    transition: all 1s;
+    opacity: 1;
+  }
+}

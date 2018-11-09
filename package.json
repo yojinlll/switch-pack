@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch":"webpack --watch",
+    "watch": "webpack --watch",
     "build": "webpack",
-    "start":"webpack-dev-server --open"
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "lodash": "^4.17.11"
   }
 }
