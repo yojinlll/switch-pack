@@ -1,15 +1,5 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
-
-$boxHeight: 420px;
-$boxWidth: 900px;
-$controllerWidth: 150px;
-$radius: 80px;
-$light-black: #212121;
-$shadow: 2px 2px 4px black;
-$box-shadow: 5px 10px 20px $light-black;
-$red: #d10019;
-$white: #fafafa;
-
+ul {list-style: none}
 
 
 .box-wrapper {
@@ -214,24 +204,5 @@ $white: #fafafa;
       transition: all 1s;
       opacity: 0;
     }
-  }
-}
-
-
-//switch-music
-.screen > .screen-main > .switch-music{
-  $border: 30px;
-  //border: 1px solid black;
-  width: $boxWidth - $controllerWidth*2 - $border;
-  height: $boxHeight - $border;
-  border-radius: 10px;
-  background: rgba(227, 20, 61, 0.87);
-  position: absolute;
-  z-index: 0;
-  opacity: 0;
-
-  &.active{
-    transition: all 1s;
-    opacity: 1;
   }
 }

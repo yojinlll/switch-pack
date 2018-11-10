@@ -1,0 +1,75 @@
+.screen > .screen-main > .switch-music{
+  $border: 30px;
+  //border: 1px solid black;
+  width: $boxWidth - $controllerWidth*2 - $border;
+  height: $boxHeight - $border;
+  border-radius: 10px;
+  background: rgba(227, 20, 61, 0.87);
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active{
+    transition: all 1s;
+    opacity: 1;
+  }
+
+  .art-controller-wrapper{
+    width: 250px; height: 370px;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .art{
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .cover{
+        margin-bottom: 30px;
+        width:150px; height: 150px;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+      .singer{
+        text-align: center;
+      }
+    }
+    .music-controller{
+      margin: 10px;
+      width: 250px;
+      height: 100px;
+      border: 1px solid black;
+    }
+  }
+  .song-list{
+    margin: 20px 10px 0 40px;
+    width: 200px; height: 320px;
+    border: 1px solid black;
+    text-align: center;
+    overflow: auto;
+
+
+    li{
+      cursor: pointer;
+      padding: 10px;
+      line-height: 10px;
+
+      &:hover{
+        background: darkred;
+      }
+      &.active{
+        background: darkred;
+      }
+    }
+  }
+}

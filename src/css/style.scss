@@ -1,2 +1,14 @@
+$boxHeight: 420px;
+$boxWidth: 900px;
+$controllerWidth: 150px;
+$radius: 80px;
+$light-black: #212121;
+$shadow: 2px 2px 4px black;
+$box-shadow: 5px 10px 20px $light-black;
+$red: #d10019;
+$white: #fafafa;
+
+
 @import "background";
 @import "switch";
+@import "switch-music";
