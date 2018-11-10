@@ -206,3 +206,29 @@ ul {list-style: none}
     }
   }
 }
+
+.box .switch-canvas{
+  $border: 30px;
+  //border: 1px solid black;
+  width: $boxWidth - $controllerWidth*2 - $border;
+  height: $boxHeight - $border;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active{
+    transition: all 1s;
+    opacity: 1;
+  }
+
+  iframe{
+    width: 98%;
+    height: 98%;
+    border-radius: 10px;
+  }
+}
