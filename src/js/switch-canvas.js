@@ -19,6 +19,8 @@
       this.model = model
       this.view.render()
 
+      console.log(222222222222)
+
       this.timer(3000).then(() => {
         this.view.canvasShow()
         clearTimeout(this.timerId)
